@@ -16,7 +16,7 @@
 int get_random_number(){
 	// Generate a random number (0 or 1)
     	int random_num = rand() % 100;
-	if(random_num < 80){
+	if(random_num < 90){
 		return 0;
 	}else{
 		return 1;
