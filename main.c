@@ -142,7 +142,12 @@ int display_state(int num_rows, int num_cols, int** curr_state){
 void clearScreen() {
     // \033[H  - Moves cursor to home position
     // \033[2J - Clears the entire screen
-    printf("\033[H\033[2J");
+    // printf("\033[H\033[2J");
+    #ifdef _WIN32
+        system("cls");
+    #else
+        system("clear");
+    #endif
 }
 
 
@@ -156,7 +161,7 @@ int main(int argc, char** argv){
 		clearScreen();
 		compute_next_state(rows_num, cols_num, world);
 		display_state(rows_num, cols_num, world);
-		SLEEP(60);
+		SLEEP(1000);
 	}
 	return 1;
 }
