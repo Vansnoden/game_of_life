@@ -16,7 +16,7 @@
 int get_random_number(){
 	// Generate a random number (0 or 1)
     	int random_num = rand() % 100;
-	if(random_num < 90){
+	if(random_num < 95){
 		return 0;
 	}else{
 		return 1;
@@ -156,7 +156,7 @@ int main(int argc, char** argv){
 		clearScreen();
 		compute_next_state(rows_num, cols_num, world);
 		display_state(rows_num, cols_num, world);
-		SLEEP(500);
+		SLEEP(60);
 	}
 	return 1;
 }
